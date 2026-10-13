@@ -3,7 +3,7 @@ class ProgramaAcademico:
         self.codigo = codigo
         self.nombre = nombre
         self.facultad = facultad
-        self._numero_de_semestres = numero_de_semestres
+        self.cambiar_numero_de_semestres(numero_de_semestres)
 
     def mostrar_informacion(self):
         print(f"Codigo: {self.codigo}")

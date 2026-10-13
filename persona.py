@@ -2,7 +2,7 @@ class Persona:
     def __init__(self, nombre, identificacion, correo):
         self.nombre = nombre
         self.identificacion = identificacion
-        self._correo = correo
+        self.cambiar_correo(correo)
 
     def mostrar_informacion(self):
         print(f"Nombre: {self.nombre}")

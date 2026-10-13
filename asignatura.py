@@ -2,7 +2,7 @@ class Asignatura:
     def __init__(self, codigo, nombre, numero_de_creditos, programa_academico):
         self.codigo = codigo
         self.nombre = nombre
-        self._numero_de_creditos = numero_de_creditos
+        self.cambiar_numero_de_creditos(numero_de_creditos)
         self.programa_academico = programa_academico
 
     def mostrar_informacion(self):
