@@ -9,3 +9,14 @@ class Docente(Persona):
         self.facultad = facultad
         self.tipo_de_contratacion = tipo_de_contratacion
         self.horas_semanales = horas_semanales
+
+    def mostrar_informacion(self):
+        super().mostrar_informacion()
+        print(f"Numero de Empleado: {self.numero_de_empleado}")
+        print(f"Facultad: {self.facultad}")
+        print(f"Tipo de Contratacion: {self.tipo_de_contratacion}")
+        print(f"Horas Semanales: {self.horas_semanales}")
+
+    def realizar_actividad_principal(self):
+        print(
+            f"El docente {self.nombre} dicta sus clases en la {self.facultad}")
