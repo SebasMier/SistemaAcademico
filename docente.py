@@ -19,4 +19,4 @@ class Docente(Persona):
 
     def realizar_actividad_principal(self):
         print(
-            f"El docente {self.nombre} dicta sus clases en la {self.facultad}")
+            f"{self.nombre} dicta sus clases en la facultad de {self.facultad}")
