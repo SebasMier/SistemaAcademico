@@ -11,6 +11,7 @@ class Estudiante(Persona):
         self.promedio_acumulado = promedio_acumulado
 
     def mostrar_informacion(self):
+        print("\n========== ESTUDIANTE ==========")
         super().mostrar_informacion()
         print(f"Codigo Estudiantil: {self.codigo_estudiantil}")
         print(f"Programa Academico: {self.programa_academico.nombre}")

@@ -11,6 +11,7 @@ class Docente(Persona):
         self.horas_semanales = horas_semanales
 
     def mostrar_informacion(self):
+        print("\n========== DOCENTE ==========")
         super().mostrar_informacion()
         print(f"Numero de Empleado: {self.numero_de_empleado}")
         print(f"Facultad: {self.facultad}")

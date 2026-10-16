@@ -11,6 +11,7 @@ class Administrativo(Persona):
         self.jornada = jornada
 
     def mostrar_informacion(self):
+        print("\n========== ADMINISTRATIVO ==========")
         super().mostrar_informacion()
         print(f"Numero de Empleado: {self.numero_de_empleado}")
         print(f"Dependencia: {self.dependencia}")
