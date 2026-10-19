@@ -1,5 +1,5 @@
 # 1. Importacion de clases
-
+from persona import Persona
 from programa_academico import ProgramaAcademico
 from asignatura import Asignatura
 from estudiante import Estudiante
@@ -120,3 +120,6 @@ try:
     estudiante2.cambiar_correo("")
 except ValueError as error:
     print(f"Error: {error}")
+
+
+# persona1 = Persona("Josefina Alba", "1234567", "JosefinaAlba@gmail.com")

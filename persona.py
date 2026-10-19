@@ -1,4 +1,7 @@
-class Persona:
+from abc import ABC, abstractmethod
+
+
+class Persona(ABC):
     def __init__(self, nombre, identificacion, correo):
         self.nombre = nombre
         self.identificacion = identificacion
@@ -14,3 +17,7 @@ class Persona:
             raise ValueError("El correo no puede estar vacio.")
         else:
             self._correo = nuevo_correo
+
+    @abstractmethod
+    def realizar_actividad_principal(self):
+        pass
