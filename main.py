@@ -127,4 +127,4 @@ except ValueError as error:
 
 grupo1 = GrupoAcademico("GP10", asignatura1, docente1,
                         22, "Lunes, martes, viernes", "8 am", "11 am", "A101")
-print(grupo1.horario.dia)
+grupo1.mostrar_informacion_grupo()
