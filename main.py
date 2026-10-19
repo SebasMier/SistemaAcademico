@@ -1,4 +1,5 @@
 # 1. Importacion de clases
+from grupo_academico import GrupoAcademico
 from persona import Persona
 from programa_academico import ProgramaAcademico
 from asignatura import Asignatura
@@ -123,3 +124,7 @@ except ValueError as error:
 
 
 # persona1 = Persona("Josefina Alba", "1234567", "JosefinaAlba@gmail.com")
+
+grupo1 = GrupoAcademico("GP10", asignatura1, docente1,
+                        22, "Lunes, martes, viernes", "8 am", "11 am", "A101")
+print(grupo1.horario.dia)
