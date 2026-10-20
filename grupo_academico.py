@@ -22,3 +22,15 @@ class GrupoAcademico:
         print(f"Hora de inicio: {self.horario.hora_inicio}")
         print(f"Hora de finalizacion: {self.horario.hora_finalizacion}")
         print(f"Salon: {self.horario.salon}")
+
+    def matricular_estudiante(self, estudiante):
+        self.estudiantes.append(estudiante)
+
+    def retirar_estudiante(self, codigo_estudiantil):
+        for estudiante_matriculado in self.estudiantes:
+            if estudiante_matriculado.codigo_estudiantil == codigo_estudiantil:
+                self.estudiantes.remove(estudiante_matriculado)
+
+    def mostrar_estudiantes(self):
+        for estudiante_matriculado in self.estudiantes:
+            print(estudiante_matriculado.nombre)

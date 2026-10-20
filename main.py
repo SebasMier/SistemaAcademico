@@ -128,3 +128,9 @@ except ValueError as error:
 grupo1 = GrupoAcademico("GP10", asignatura1, docente1,
                         22, "Lunes, martes, viernes", "8 am", "11 am", "A101")
 grupo1.mostrar_informacion_grupo()
+grupo1.matricular_estudiante(estudiante1)
+grupo1.matricular_estudiante(estudiante2)
+grupo1.mostrar_estudiantes()
+grupo1.mostrar_informacion_grupo()
+grupo1.retirar_estudiante("D1010")
+grupo1.mostrar_informacion_grupo()
