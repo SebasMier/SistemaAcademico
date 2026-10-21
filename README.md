@@ -27,6 +27,10 @@ El proyecto se divide de la siguiente manera:
 
 - **`main.py`**: es el archivo principal del programa donde se crean los objetos y nos permite comprobar que las clases y sus métodos están funcionando de manera correcta.
 
+- **`grupo_academico.py`**: contiene la clase `GrupoAcademico`, la cual alamcena la informacion de cada grupo como su asignatura, el docente, la capacidad maxima de estudiantes, los estudiantes matriculados y el horario.
+
+- **`horario.py`**: contiene la clase `Horario`, la cual almacena los dias, las horas de inicio y finalizacion y el salon donde ocurren las clases.
+
 - **`README.md`**: en este archivo se realiza la descripción del proyecto, su objetivo y las instrucciones para poder ejecutar el proyecto.
 
 ## Conceptos de POO utilizados
@@ -88,6 +92,13 @@ Esta lista se recorre mediante un ciclo `for`, donde se ejecutan los métodos:
 - **`realizar_actividad_principal()`**
 
 Aunque se llaman los mismos métodos, cada objeto muestra información y realiza una actividad diferente dependiendo de su clase.
+
+### 6. Composicion
+En las clases `GrupoAcademico` y `Horario` se usa composicion, esto quiere decir que cada grupo academico tiene su propio horario que muestra cuales son los dias, las horas de inicio, de finalizacion y el salon de cada clase.
+
+Ahora la clase `GrupoAcademico` crea y almacena un objeto de la clase `Horario`. Asi de esta manera, la informacion del horario se organiza en un objeto independiente y no en una cadena de texto.
+
+Esta relacion no corresponde a herencia porque las clases `GrupoAcademico` y `Horario` cumplen funciones diferentes. La clase `GrupoAcademico` es la encargada de organizar la informacion del grupo, ya sea su asignatura, docente o sus estudiantes matriculados, mientras que la clase `Horario` guarda los dias, las horas y el salon donde ocurren las clases. Por esta razon cualquier grupo academico cuenta con un horario pero no necesita heredar de la clase `Horario`.
 
 ## Instrucciones de ejecución
 
