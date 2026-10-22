@@ -1,4 +1,5 @@
 from horario import Horario
+from excepciones import EstudianteMatriculadoError, CapacidadGrupoMaxima, EstudianteNoMatriculado
 
 
 class GrupoAcademico:
@@ -24,12 +25,22 @@ class GrupoAcademico:
         print(f"Salon: {self.horario.salon}")
 
     def matricular_estudiante(self, estudiante):
+        for estudiante_matriculado in self.estudiantes:
+            if estudiante_matriculado.codigo_estudiantil == estudiante.codigo_estudiantil:
+                raise EstudianteMatriculadoError(
+                    "El estudiante ya ha sido matriculado")
+
+        if len(self.estudiantes) >= self.capacidad_maxima:
+            raise CapacidadGrupoMaxima(
+                "El grupo ha llegado al maximo de participantes")
         self.estudiantes.append(estudiante)
 
     def retirar_estudiante(self, codigo_estudiantil):
         for estudiante_matriculado in self.estudiantes:
             if estudiante_matriculado.codigo_estudiantil == codigo_estudiantil:
                 self.estudiantes.remove(estudiante_matriculado)
+                return
+        raise EstudianteNoMatriculado("Este estudiante no esta matriculado")
 
     def mostrar_estudiantes(self):
         for estudiante_matriculado in self.estudiantes:
