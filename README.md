@@ -13,7 +13,7 @@ El objetivo de este proyecto fue poder aplicar los conceptos básicos aprendidos
 
 El proyecto se divide de la siguiente manera:
 
-- **`persona.py`**: contiene la clase `Persona`, la cual guarda los datos básicos de las personas (nombre, identificación y correo).
+- **`persona.py`**: contiene la clase abstracta Persona, que guarda los datos básicos de las personas (nombre, identificación y correo). Esta clase define el método abstracto realizar_actividad_principal(), que debe ser implementado por las clases Estudiante, Docente y Administrativo. No se pueden crear objetos directamente de Persona.
 
 - **`programa_academico.py`**: contiene la clase `ProgramaAcademico`, la cual guarda los datos básicos de los programas de la universidad (código, nombre, facultad y número de semestres).
 
@@ -30,6 +30,8 @@ El proyecto se divide de la siguiente manera:
 - **`grupo_academico.py`**: contiene la clase `GrupoAcademico`, la cual alamcena la informacion de cada grupo como su asignatura, el docente, la capacidad maxima de estudiantes, los estudiantes matriculados y el horario.
 
 - **`horario.py`**: contiene la clase `Horario`, la cual almacena los dias, las horas de inicio y finalizacion y el salon donde ocurren las clases.
+
+- **`excepciones.py`**: contiene las cinco clases de excepciones personalizadas que permiten identificar errores relacionados con estudiantes duplicados, capacidad máxima de los grupos, retiro de estudiantes no matriculados, asignaturas inexistentes y programas académicos inexistentes.
 
 - **`README.md`**: en este archivo se realiza la descripción del proyecto, su objetivo y las instrucciones para poder ejecutar el proyecto.
 
@@ -72,7 +74,9 @@ Cada una tiene su propia versión del método `mostrar_informacion()`, que permi
 Por ejemplo:
 
 - **`Estudiante`**: muestra `codigo_estudiantil`, `programa_academico`, `semestre` y `promedio_acumulado`.
+
 - **`Docente`**: muestra `numero_de_empleado`, `facultad`, `tipo_de_contratacion` y `horas_semanales`.
+
 - **`Administrativo`**: muestra `numero_de_empleado`, `dependencia`, `cargo` y `jornada`.
 
 ### 5. Polimorfismo
@@ -100,6 +104,37 @@ Ahora la clase `GrupoAcademico` crea y almacena un objeto de la clase `Horario`.
 
 Esta relacion no corresponde a herencia porque las clases `GrupoAcademico` y `Horario` cumplen funciones diferentes. La clase `GrupoAcademico` es la encargada de organizar la informacion del grupo, ya sea su asignatura, docente o sus estudiantes matriculados, mientras que la clase `Horario` guarda los dias, las horas y el salon donde ocurren las clases. Por esta razon cualquier grupo academico cuenta con un horario pero no necesita heredar de la clase `Horario`.
 
+### 7. Clase abstracta
+Se convirtio la clase `Persona` en una *clase abstracta* mediante el uso de `ABC`, y `@abstractmethod`. Esta clase guarda el metodo **`realizar_actividad_principal()`** el cual permite que cada clase tenga su propia implementacion dependiendo de la actividad que tenga que realizar, ahora la clase `Persona` al convertirse en abstracta, no permite crear objetos directamente.
+
+### 8. Matricula y retiro de un estudiante
+- La clase **`GrupoAcademico`** permite administrar los estudiantes que pertenecen a cada grupo.
+
+- El metodo **`matricular_estudiante()`** permite agregar estudiantes mientras que no hayan sido matriculados previamente y que el grupo no haya alcanzado su capacidad maxima.
+
+- El metodo **`retirar_estudiante()`** permite retirar un estudiante mediante su codigo estudiantil.
+
+- El metodo **`mostrar_estudiantes()`** muestra los nombres de los estudiantes matriculados.
+
+
+### 9. Excepciones personalizadas
+
+Se creo el archivo **`excepciones.py`**, el cual contiene cinco excepciones personalizadas para controlar diferentes situaciones del sistema.
+
+- **`EstudianteMatriculadoError`**: cuando un estudiante ya se encuentra matriculado en el grupo.
+
+- **`CapacidadGrupoMaxima`**: cuando se intenta matricular un estudiante en un grupo lleno.
+
+- **`EstudianteNoMatriculado`**: cuando se intenta retirar un estudiante que no pertenece al grupo.
+
+- **`AsignaturaNoEncontrada`**: cuando se busca una asignatura que no existe.
+
+- **`ProgramaAcademicoNoEncontrado`**: cuando se busca un programa academico que no existe.
+
+Estas excepciones se controlan utilizando `try/except` en `main.py`, lo que permite identificar los errores, mostrar un mensaje cuando ocurren y evitar que el programa se detenga.
+
+
+
 ## Instrucciones de ejecución
 
 Para poder ejecutar este proyecto debes tener instalado Python 3. Durante el desarrollo se utilizó la versión 3.14.7.
@@ -117,6 +152,10 @@ Al hacer esto, el programa mostrará la información de los objetos creados, las
 - **Git y GitHub**: utilizados para guardar cambios y almacenar el proyecto.
 
 - **[Markdown Guide](https://www.markdownguide.org/basic-syntax/)**: se uso esta pagina para aprender la sintaxis básica de Markdown y elaborar el archivo `README.md`.
+
+- **ChatGPT**: se utilizó como herramienta de apoyo para organizar de manera más clara y ordenada el código del archivo `main.py`, para facilitar su comprension y sea mas facil de entender las diferentes partes del programa. También se utilizó para analizar posibles errores en el código y revisar su funcionamiento.
+
+- **GitHub Copilot**: se utilizó como herramienta de apoyo dentro de Visual Studio Code para facilitar la escritura del código y ayudar a identificar posibles errores durante el desarrollo del proyecto.
 
 
 ## Autor
